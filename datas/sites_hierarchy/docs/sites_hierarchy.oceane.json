@@ -1,0 +1,315 @@
+{
+  "doctype"                                 : "sites_hierarchy",
+  "id"                                      : "sites_hierarchy.oceane",
+  "guid"                                    : "oceane",
+  "name"                                    : "Océane",
+  "hierarchy"                               : 
+    [
+      {
+        "id":"site_structure.oceane.mia",
+        "name":"Maison individuelle A",
+        "hierarchy" : 
+        [
+          {
+            "id":"",
+            "name":"Rez de chaussée",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mia.rdc.salle",
+                "name":"Salle",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mia.rdc.salon",
+                "name":"Salon",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mia.rdc.cuisine",
+                "name":"Cuisine",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mia.rdc.wc",
+                "name":"WC",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mia.rdc.garage",
+                "name":"Garage",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"",
+            "name":"1er Étage",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mia.etage1.chambre1",
+                "name":"Chambre 1",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mia.etage1.chambre2",
+                "name":"Chambre 2",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mia.etage1.chambre3",
+                "name":"Chambre 3",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"site_structure.oceane.mia.parking",
+            "name":"Parking",
+            "hierarchy" : []  
+          },{
+            "id":"site_structure.oceane.mia.jardin",
+            "name":"Jardin Individuel",
+            "hierarchy" : []  
+          }
+        ]  
+      },{
+        "id":"site_structure.oceane.mib",
+        "name":"Maison individuelle B",
+        "hierarchy" : 
+        [
+          {
+            "id":"",
+            "name":"Rez de chaussée",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mib.rdc.salle",
+                "name":"Salle",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mib.rdc.salon",
+                "name":"Salon",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mib.rdc.cuisine",
+                "name":"Cuisine",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mib.rdc.wc",
+                "name":"WC",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mib.rdc.garage",
+                "name":"Garage",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"",
+            "name":"1er Étage",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mib.etage1.chambre1",
+                "name":"Chambre 1",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mib.etage1.chambre2",
+                "name":"Chambre 2",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mib.etage1.chambre3",
+                "name":"Chambre 3",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"site_structure.oceane.mib.parking",
+            "name":"Parking",
+            "hierarchy" : []  
+          },{
+            "id":"site_structure.oceane.mib.jardin",
+            "name":"Jardin Individuel",
+            "hierarchy" : []  
+          }
+        ]  
+      },{
+        "id":"site_structure.oceane.mic",
+        "name":"Maison individuelle C",
+        "hierarchy" : 
+        [
+          {
+            "id":"",
+            "name":"Rez de chaussée",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mic.rdc.salle",
+                "name":"Salle",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mic.rdc.salon",
+                "name":"Salon",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mic.rdc.cuisine",
+                "name":"Cuisine",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mic.rdc.wc",
+                "name":"WC",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mic.rdc.garage",
+                "name":"Garage",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"",
+            "name":"1er Étage",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mic.etage1.chambre1",
+                "name":"Chambre 1",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mic.etage1.chambre2",
+                "name":"Chambre 2",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mic.etage1.chambre3",
+                "name":"Chambre 3",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"site_structure.oceane.mic.parking",
+            "name":"Parking",
+            "hierarchy" : []  
+          },{
+            "id":"site_structure.oceane.mic.jardin",
+            "name":"Jardin Individuel",
+            "hierarchy" : []  
+          }
+        ]  
+      },{
+        "id":"site_structure.oceane.mid",
+        "name":"Maison individuelle D",
+        "hierarchy" : 
+        [
+          {
+            "id":"",
+            "name":"Rez de chaussée",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mid.rdc.salle",
+                "name":"Salle",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mid.rdc.salon",
+                "name":"Salon",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mid.rdc.cuisine",
+                "name":"Cuisine",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mid.rdc.wc",
+                "name":"WC",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mid.rdc.garage",
+                "name":"Garage",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"",
+            "name":"1er Étage",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mid.etage1.chambre1",
+                "name":"Chambre 1",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mid.etage1.chambre2",
+                "name":"Chambre 2",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mid.etage1.chambre3",
+                "name":"Chambre 3",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"site_structure.oceane.mid.parking",
+            "name":"Parking",
+            "hierarchy" : []  
+          },{
+            "id":"site_structure.oceane.mid.jardin",
+            "name":"Jardin Individuel",
+            "hierarchy" : []  
+          }
+        ]  
+      },{
+        "id":"site_structure.oceane.mie",
+        "name":"Maison individuelle E",
+        "hierarchy" : 
+        [
+          {
+            "id":"",
+            "name":"Rez de chaussée",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mie.rdc.salle",
+                "name":"Salle",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mie.rdc.salon",
+                "name":"Salon",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mie.rdc.cuisine",
+                "name":"Cuisine",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mie.rdc.wc",
+                "name":"WC",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mie.rdc.garage",
+                "name":"Garage",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"",
+            "name":"1er Étage",
+            "hierarchy" : 
+            [
+              {
+                "id":"site_structure.oceane.mie.etage1.chambre1",
+                "name":"Chambre 1",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mie.etage1.chambre2",
+                "name":"Chambre 2",
+                "hierarchy" : []  
+              },{
+                "id":"site_structure.oceane.mie.etage1.chambre3",
+                "name":"Chambre 3",
+                "hierarchy" : []  
+              }
+            ]  
+          },{
+            "id":"site_structure.oceane.mie.parking",
+            "name":"Parking",
+            "hierarchy" : []  
+          },{
+            "id":"site_structure.oceane.mie.jardin",
+            "name":"Jardin Individuel",
+            "hierarchy" : []  
+          }
+        ]  
+      }
+    ]
+}

@@ -1,0 +1,106 @@
+#!/bin/bash
+
+#############################################################
+#    Script de chargment du jeux de données smartfluides    #
+#    Cédric VASSEUR                                         #
+#    Mai 2016                                               #
+#############################################################
+
+
+# Export du path de couchbase
+export PATH=$PATH:/usr/local/couchbase/Couchbase\ Server.app/Contents/Resources/couchbase-core/bin/
+# Information de connexion au serveur couchbase
+#serveur=127.0.0.1
+serveur=10.17.222.48
+port=8091
+bucket=smartfluides
+user=Administrator
+#password=couchbase
+password=administrator1
+logfile=load.log
+
+# Récupération du répertoire courant
+filepath=`echo "$0" | sed -e "s/[^\/]*$//"`
+cd "$filepath"
+
+#Création des fichiers json
+for repertoire in `ls -d */`
+do
+	if [ -d "${repertoire%/}/png" ]
+	then
+		cd ${repertoire%/}/png
+		for fichier in `ls *.png`
+		do
+			type=${fichier:0:4}
+			filename=file.${fichier%.png}.json
+
+			if [ $type = "admi" ]
+			then
+			   	width="198"
+				height="255"
+			elif [ $type = "user" ]
+			then
+			   	width="198"
+				height="255"
+			elif [ $type = "orga" ]
+			then
+			   	width="500"
+				height="100"
+			elif [ $type = "site" ]
+			then
+			   	width="320"
+				height="240"
+			else
+			   	width=""
+				height=""
+			fi
+    
+		    printf "{\n  \"doctype\"  : \"file\",\n  \"id\"       : \"file.${fichier%.png}\",\n  \"guid\"     : \"${fichier%.png}\",\n  \"filename\" : \"$fichier\",\n  \"width\"    : \"$width\",\n  \"height\"   : \"$height\",\n  \"type\"     : \"data:image/png;base64\", \n  \"base64\"   : \"" > ../docs/$filename
+		    openssl base64 -in $fichier | tr -d '\n' >> ../docs/$filename
+		    printf "\"\n}" >> ../docs/$filename
+		done
+		cd ../..
+	fi
+
+	if [ -d "${repertoire%/}/excel" ]
+	then
+		java -jar xls2json.jar ${repertoire%/}/excel/ 
+
+		for fichier in `ls ${repertoire%/}/excel/*.json`
+		do
+			#rm -rf ${repertoire%/}/docs/*.json
+			mv $fichier ${repertoire%/}/docs/
+		done
+	fi
+done
+echo "Création des fichiers json ....... OK" > $logfile
+
+#Génération des fichiers zip
+for repertoire in `ls -d */`
+do
+	if [ -d "${repertoire%/}/docs" ]
+	then
+		zip ${repertoire%/}.zip ${repertoire%/}/docs/*.json
+	fi
+
+	if [ -d "${repertoire%/}/design_docs" ]
+	then
+		zip ${repertoire%/}.zip ${repertoire%/}/design_docs/*.json
+	fi
+
+done
+echo "Génération des fichiers zip ....... OK" >> $logfile
+
+#Chargement des fichiers zip
+for fichier in `ls *.zip`
+do
+	echo "Chargement du fichier $fichier ....... OK" >> $logfile
+	cbdocloader -n $serveur:$port -u $user -p $password -b $bucket $fichier >> $logfile
+done
+echo "Chargement des fichiers zip ....... OK" >> $logfile
+
+#Suppression des fichiers zip
+rm *.zip >> $logfile
+
+osascript -e 'tell application "Terminal" to close (every window whose name contains "load")' &
+exit

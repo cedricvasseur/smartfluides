@@ -1,0 +1,10 @@
+{
+	"doctype"  		: "root",
+  	"id"       		: "root.uid.0",
+  	"guid"			: "uid.0",
+  	"name"  		: "Super Administrateur",
+  	"email" 		: "root@smartfluide.com",
+  	"description"	: "Super Administrateur",
+  	"login"			: "root",
+  	"password" 		: "e1uz5Nl4oTNdM"
+}

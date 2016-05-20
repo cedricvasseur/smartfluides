@@ -1,0 +1,21 @@
+{
+  "_id": "_design/smartfluides",
+  "language": "javascript",
+  "views": {
+    "users": {
+      "map": "function (doc, meta) {\n  if(doc.doctype && (doc.doctype == \"admin\" || doc.doctype == \"user\" || doc.doctype == \"prestataire\")) {\n      emit(meta.id,{name: doc.name,email:doc.email, address : doc.address+' '+doc.zipcode +' '+doc.town, role:doc.role});\n }\n}"
+    },
+    "users_gestionnaires": {
+      "map": "function (doc, meta) {\n  if(doc.doctype && (doc.doctype == \"user\" && doc.role == \"Gestionnaire\")) {\n      emit(meta.id,{name: doc.name,email:doc.email, address : doc.address+' '+doc.zipcode +' '+doc.town, role:doc.role});\n }\n}"
+    },
+    "users_residents": {
+      "map": "function (doc, meta) {\n  if(doc.doctype && (doc.doctype == \"user\" && doc.role == \"Résident\")) {\n      emit(meta.id,{name: doc.name,email:doc.email, address : doc.address+' '+doc.zipcode +' '+doc.town, role:doc.role});\n }\n}"
+    },
+    "users_administrateurs": {
+      "map": "function (doc, meta) {\n  if(doc.doctype && (doc.doctype == \"admin\" && doc.role == \"Administrateur\")) {\n      emit(meta.id,{name: doc.name,email:doc.email, address : doc.address+' '+doc.zipcode +' '+doc.town, role:doc.role});\n }\n}"
+    },
+    "users_prestataires": {
+      "map": "function (doc, meta) {\n  if(doc.doctype && (doc.doctype == \"prestataire\" && doc.role == \"Prestataire\")) {\n      emit(meta.id,{name: doc.name,email:doc.email, address : doc.address+' '+doc.zipcode +' '+doc.town, role:doc.role});\n }\n}"
+    }
+  }
+}

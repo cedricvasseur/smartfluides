@@ -1,0 +1,7 @@
+{
+  "doctype"                                 : "sites_hierarchy",
+  "id"                                      : "sites_hierarchy.lycee_jules_verne",
+  "guid"                                    : "lycee_jules_verne",
+  "name"                                    : "Lycée Jules Verne",
+  "hierarchy"                               : []
+}

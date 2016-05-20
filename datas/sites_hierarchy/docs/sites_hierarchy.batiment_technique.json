@@ -1,0 +1,7 @@
+{
+  "doctype"                                 : "sites_hierarchy",
+  "id"                                      : "sites_hierarchy.batiment_technique",
+  "guid"                                    : "batiment_technique",
+  "name"                                    : "Bâtiment Technique",
+  "hierarchy"                               : []
+}

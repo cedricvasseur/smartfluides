@@ -1,0 +1,280 @@
+{
+  "doctype"                                 : "site_hierarchy",
+  "id"                                      : "site_hierarchy.azur",
+  "guid"                                    : "azur",
+  "name"                                    : "Azur",
+  "hierarchy"                               : 
+    [
+      {
+        "id":"site_structure.azur.bata",
+        "name":"Bâtiment A",
+        "hierarchy" : 
+          [
+            {
+              "id":".azur.bata.niv0",
+              "name":"Rez de chaussée",
+              "hierarchy" : 
+              [
+                {
+                  "id":"site_structure.azur.bata.niv0.lta001",
+                  "name":"Local Technique A001",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta001",
+                  "name":"Logement A001",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta002",
+                  "name":"Logement A002",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta003",
+                  "name":"Logement A003",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta004",
+                  "name":"Logement A004",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta005",
+                  "name":"Logement A005",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta006",
+                  "name":"Logement A006",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta007",
+                  "name":"Logement A007",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta008",
+                  "name":"Logement A008",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv0.lgta009",
+                  "name":"Logement A009",
+                  "hierarchy" : []  
+                }
+              ]  
+            },{
+              "id":"site_structure.azur.bata.niv1",
+              "name":"Étage 1",
+              "hierarchy" : 
+              [
+                {
+                  "id":"site_structure.azur.bata.niv1.lta101",
+                  "name":"Local Technique A101",
+                  "hierarchy" : [] 
+                },{
+                  "id":"site_structure.azur.bata.niv1.lta102",
+                  "name":"Local Technique A102",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta101",
+                  "name":"Logement A101",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta102",
+                  "name":"Logement A102",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta103",
+                  "name":"Logement A103",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta103",
+                  "name":"Logement A104",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta104",
+                  "name":"Logement A105",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta105",
+                  "name":"Logement A106",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta106",
+                  "name":"Logement A107",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta107",
+                  "name":"Logement A108",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.bata.niv1.lgta109",
+                  "name":"Logement A109",
+                  "hierarchy" : []  
+                }
+              ]  
+            }
+          ]  
+      },{
+        "id":"site_structure.azur.batb",
+        "name":"Bâtiment B",
+        "hierarchy" : 
+          [
+            {
+              "id":"site_structure.azur.batb.niv0",
+              "name":"Rez de chaussée",
+              "hierarchy" : 
+              [
+                {
+                  "id":"site_structure.azur.batb.niv0.ltb001",
+                  "name":"Local Technique B001",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb001",
+                  "name":"Logement B001",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb002",
+                  "name":"Logement B002",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb003",
+                  "name":"Logement 103",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb004",
+                  "name":"Logement 104",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb005",
+                  "name":"Logement 105",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb006",
+                  "name":"Logement 106",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb007",
+                  "name":"Logement 107",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb008",
+                  "name":"Logement 108",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv0.lgtb009",
+                  "name":"Logement 109",
+                  "hierarchy" : []  
+                }
+              ]  
+            },{
+              "id":"site_structure.azur.batb.niv1",
+              "name":"Étage 1",
+              "hierarchy" : 
+              [
+                {
+                  "id":"site_structure.azur.batb.niv1.ltb101",
+                  "name":"Local Technique B101",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.batb.niv1.ltb102",
+                  "name":"Local Technique B102",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb101",
+                  "name":"Logement B101",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb102",
+                  "name":"Logement B102",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb103",
+                  "name":"Logement B103",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb104",
+                  "name":"Logement B104",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb105",
+                  "name":"Logement B105",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb106",
+                  "name":"Logement B106",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb107",
+                  "name":"Logement B107",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb108",
+                  "name":"Logement B108",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv1.lgtb109",
+                  "name":"Logement B109",
+                  "hierarchy" : []  
+                }
+              ]  
+            },{
+              "id":"site_structure.azur.batb.niv2",
+              "name":"Étage 2",
+              "hierarchy" : 
+              [
+                {
+                  "id":"site_structure.azur.batb.niv2.ltb201",
+                  "name":"Local Technique B201",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.batb.niv2.ltb201",
+                  "name":"Local Technique B202",
+                  "hierarchy" : []  
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb201",
+                  "name":"Logement B201",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb202",
+                  "name":"Logement B202",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb203",
+                  "name":"Logement B203",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb204",
+                  "name":"Logement B204",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb205",
+                  "name":"Logement B205",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb206",
+                  "name":"Logement B206",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb207",
+                  "name":"Logement B207",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb208",
+                  "name":"Logement B208",
+                  "hierarchy" : []
+                },{
+                  "id":"site_structure.azur.batb.niv2.lgtb209",
+                  "name":"Logement B209",
+                  "hierarchy" : []  
+                }
+              ]  
+            }
+          ]  
+      
+      },{
+        "id":"site_structure.azur.pkgc01",
+        "name":"Parking Collectif",
+        "hierarchy" : []
+      },{
+        "id":"site_structure.azur.eec01",
+        "name":"Espace Extérieur Collectif",
+        "hierarchy" : []
+      }
+    ]
+}

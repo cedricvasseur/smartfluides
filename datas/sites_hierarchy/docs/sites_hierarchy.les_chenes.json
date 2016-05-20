@@ -1,0 +1,190 @@
+{
+  "doctype"                                 : "sites_hierarchy",
+  "id"                                      : "sites_hierarchy.les_chenes",
+  "guid"                                    : "les_chenes",
+  "name"                                    : "Les chênes",
+  "hierarchy"                               : 
+  [
+    {
+      "id":"site_structure.les_chenes.bata",
+      "name":"Bâtiment A",
+      "hierarchy" : 
+      [
+        {
+          "id":"site_structure.les_chenes.bata.lta",
+          "name":"Local Technique A",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.bata.lgta01",
+          "name":"Logement A01",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.bata.lgta02",
+          "name":"Logement A02",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.bata.lgta03",
+          "name":"Logement A03",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.bata.lgta04",
+          "name":"Logement A04",
+          "hierarchy" : []
+        }
+      ]
+    },{
+      "id":"site_structure.les_chenes.batb",
+      "name":"Bâtiment B",
+      "hierarchy" : 
+      [
+        {
+          "id":"site_structure.les_chenes.batb.ltb",
+          "name":"Local Technique B",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batb.lgtb01",
+          "name":"Logement B01",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batb.lgtb02",
+          "name":"Logement B02",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batb.lgtb03",
+          "name":"Logement B03",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batb.lgtb04",
+          "name":"Logement B04",
+          "hierarchy" : []
+        }
+      ]
+    },{
+      "id":"site_structure.les_chenes.batc",
+      "name":"Bâtiment C",
+      "hierarchy" : 
+      [
+        {
+          "id":"site_structure.les_chenes.batc.ltc",
+          "name":"Local Technique C",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batc.lgtc01",
+          "name":"Logement C01",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batc.lgtc02",
+          "name":"Logement C02",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batc.lgtc03",
+          "name":"Logement C03",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batc.lgtc04",
+          "name":"Logement C04",
+          "hierarchy" : []
+        }
+      ]
+    },{
+      "id":"site_structure.les_chenes.batd",
+      "name":"Bâtiment D",
+      "hierarchy" : 
+      [
+        {
+          "id":"site_structure.les_chenes.batd.ltd",
+          "name":"Local Technique D",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batd.lgtd01",
+          "name":"Logement D01",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batd.lgtd02",
+          "name":"Logement D02",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batd.lgtd03",
+          "name":"Logement D03",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batd.lgtd04",
+          "name":"Logement D04",
+          "hierarchy" : []
+        }
+      ]
+    },{
+      "id":"site_structure.les_chenes.bate",
+      "name":"Bâtiment E",
+      "hierarchy" : 
+      [
+        {
+          "id":"site_structure.les_chenes.bate.lte",
+          "name":"Local Technique E",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.bate.lgte01",
+          "name":"Logement E01",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.bate.lgte02",
+          "name":"Logement E02",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.bate.lgte03",
+          "name":"Logement E03",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.bate.lgte04",
+          "name":"Logement E04",
+          "hierarchy" : []
+        }
+      ]
+    },{
+      "id":"site_structure.les_chenes.batf",
+      "name":"Bâtiment F",
+      "hierarchy" : 
+      [
+        {
+          "id":"site_structure.les_chenes.batf.ltf",
+          "name":"Local Technique F",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batf.lgtf01",
+          "name":"Logement F01",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batf.lgtf02",
+          "name":"Logement F02",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batf.lgtf03",
+          "name":"Logement F03",
+          "hierarchy" : []
+        },{
+          "id":"site_structure.les_chenes.batf.lgtf04",
+          "name":"Logement F04",
+          "hierarchy" : []
+        }
+      ]
+    },{
+      "id":"site_structure.les_chenes.pkgc01",
+      "name":"Parking Collectif",
+      "hierarchy" : []
+    },{
+      "id":"site_structure.les_chenes.eexc01",
+      "name":"Espace Extérieur Collectif",
+      "hierarchy" : []
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
