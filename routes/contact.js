@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET contact page. */
 router.get('/', function(req, res, next) {
-  res.render('contact', { title: 'Smart Fluides' });
+  res.render('contact_ltr.html',{i18n: res});
 });
 
 module.exports = router;

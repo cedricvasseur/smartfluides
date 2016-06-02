@@ -1,36 +1,71 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express         = require('express'),
+    session         = require('express-session'),
+    path            = require('path'),
+    favicon         = require('serve-favicon'),
+    logger          = require('morgan'),    
+    cookieParser    = require('cookie-parser'),
+    bodyParser      = require('body-parser'),
+    passport        = require('passport'),
+    i18n            = require("i18n"),
+    L10n            = require('L10n'),
+    fs              = require('fs');
 
-var config  = require("./config/app.json");
+//Loading Configuration file
+var config  = require('./config/config');
 
-//routes definitions
-var index   = require('./routes/index');
-var contact = require('./routes/contact');
-var about   = require('./routes/about');
-var users   = require('./routes/users');
 
-var app = express();
+// Internationalisation Configuration
+i18n.configure(config.i18n);
+var locale = new L10n();
+
+var app = module.exports = express(); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.engine('html', require('ejs').renderFile);
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+app.use(cookieParser());
+app.use(i18n.init);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({secret: config.session.secretkey,resave: true, saveUninitialized: true,cookie: { maxAge: 60000 , httpOnly: true}}));
 
-app.use('/'       , index);
-app.use('/contact', contact);
-app.use('/about'  , about);
-app.use('/users'  , users);
+
+// Statics Routes.
+app.use('/bootstrap',         express.static(__dirname + '/node_modules/bootstrap/dist/'));
+app.use('/jquery',            express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/flag-icon-css',     express.static(__dirname + '/node_modules/flag-icon-css/'));
+app.use('/angular',           express.static(__dirname + '/node_modules/angular/'));
+app.use('/angular-ui-router', express.static(__dirname + '/node_modules/angular-ui-router/release/'));
+
+// Main Route
+app.get('/', function(req, res, next) {
+  var direction = locale.info(res.getLocale().toLowerCase()).direction == null ? locale.info(res.getLocale().toLowerCase()).direction : 'ltr';
+  res.render('index_'+direction+'.html',{i18n: res});
+});
+var languages = module.exports = i18n.getCatalog();
+
+
+//Loading Routes.
+console.log("Loading Routes...");
+var routes = {};
+var routes_path = __dirname + '/routes';
+//
+fs.readdirSync(routes_path).forEach(function (file) {
+    if (file.indexOf('.js') != -1) {
+        routes['/'+file.split('.')[0]] = require(routes_path + '/' + file);
+    }
+});
+
+for(var i in routes)
+{
+  app.use(i,routes[i]);
+// console.log("loading Route ", i);  
+}
+console.log("Routes loaded..............[ok]");
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -46,7 +81,8 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('error.html', {
+      i18n:res,
       message: err.message,
       error: err
     });
@@ -57,7 +93,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.render('error.html', {
     message: err.message,
     error: {}
   });
