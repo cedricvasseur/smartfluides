@@ -10,13 +10,13 @@
 # Export du path de couchbase
 export PATH=$PATH:/usr/local/couchbase/Couchbase\ Server.app/Contents/Resources/couchbase-core/bin/
 # Information de connexion au serveur couchbase
-#serveur=127.0.0.1
-serveur=10.17.222.48
+serveur=127.0.0.1
+#serveur=10.17.222.48
 port=8091
 bucket=smartfluides
 user=Administrator
-#password=couchbase
-password=administrator1
+password=couchbase
+#password=administrator1
 logfile=load.log
 
 # Récupération du répertoire courant
