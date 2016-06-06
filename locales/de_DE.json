@@ -2,7 +2,6 @@
 	"home": "Willkommen",
 	"about": "Über",
 	"contact": "Kontakt",
-	"language": "Sprache",
 	"users": "Benutzer",
 	"description": "Die neue Rendering-Anwendung Fluid Data Suez Smart Building, für den Kunden erstellt wurde, kann der Smart Fluid-App schneller Multi-Media-Daten anzeigen, sicherer, und dies auf allen Geräten.",
 	"login_button": "Melden Sie sich mit Ihrem Konto",
@@ -18,8 +17,11 @@
 	"jp_JP": "Japanisch",
 	"ar_TN": "Tunesische",
 	"ru_RU": "Russisch",
+	"es_ES": "Spanisch",
+	"it_IT": "Italienisch",
 	"name": "Name",
 	"email": "E-mail",
 	"address": "Adresse",
-	"role": "Rolle"
+	"role": "Rolle",
+	"search": "Suche"
 }

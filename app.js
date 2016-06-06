@@ -40,10 +40,11 @@ app.use('/jquery',            express.static(__dirname + '/node_modules/jquery/d
 app.use('/flag-icon-css',     express.static(__dirname + '/node_modules/flag-icon-css/'));
 app.use('/angular',           express.static(__dirname + '/node_modules/angular/'));
 app.use('/angular-ui-router', express.static(__dirname + '/node_modules/angular-ui-router/release/'));
+app.use('/angular-utils-pagination', express.static(__dirname + '/node_modules/angular-utils-pagination/'));
 
 // Main Route
 app.get('/', function(req, res, next) {
-  var direction = locale.info(res.getLocale().toLowerCase()).direction == null ? locale.info(res.getLocale().toLowerCase()).direction : 'ltr';
+  var direction = locale.info(res.getLocale().toLowerCase()).direction;
   res.render('index_'+direction+'.html',{i18n: res});
 });
 var languages = module.exports = i18n.getCatalog();

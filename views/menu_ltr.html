@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" >
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed">
@@ -7,13 +7,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand"><%=i18n.__("title")%></a>
+			<a href="/" class="navbar-brand"><%=i18n.__("title")%></a>
 		</div>
-		<div id="navbar" class="navbar-collapse collapse">
+		<div id="navbar" class="navbar-collapse collapse"  ng-app="i18n" ng-controller="LanguageController" ng-init="fetchAll()">
 			<ul class="nav navbar-nav">
-				<li>
-					<a href="/"> <%=i18n.__("home")%></a>
-				</li>
 				<li>
 					<a href="/about"> <%=i18n.__("about")%></a>
 				</li>
@@ -23,9 +20,10 @@
 				<li>
 					<a href="/users"> <%=i18n.__("users")%></a>
 				</li>
-				<li class="dropdown"> 
-					<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle"> <%=i18n.__("language")%></a>
-					<ul aria-labelledby="dropdownMenu4" class="dropdown-menu" ng-controller="LanguageController" ng-init="fetchAll()" >
+				<li class="dropdown">
+					<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle">
+						<i class="flag-icon  <%='flag-icon-'+i18n.getLocale().substring(3,6).toLowerCase()  %> "></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= i18n.__(i18n.getLocale())%></a>
+					<ul aria-labelledby="dropdownMenu4" class="dropdown-menu" >
 						<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle"></a>
 						<li ng-repeat="lang in languages">
 							<a href="/nls/{{lang.code}}">

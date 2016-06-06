@@ -1,55 +1,65 @@
 <% include header.html %>
+	<script src="/angular-utils-pagination/dirPagination.js"></script>
 	<script src="/javascripts/users.js"></script>	
 </head>
-<body ng-app="app" >
+<body>
  	<% include menu_ltr.html %>
-<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" class="modal fade">
-	<div class="modal-dialog">
-		<div class="loginmodal-container">
-			<h1>Login to Your Account</h1>
-			<form action="/login" method="POST">
-				<input type="text" name="username" placeholder="Username">
-				<input type="password" name="password" placeholder="Password">
-				<input type="submit" value="Login" class="login loginmodal-submit">
-			</form>
-			<div class="login-help">
-				<a href="#">Register &nbsp;-&nbsp;  </a>
-				<a href="#">Forgot Password</a>
+	<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" class="modal fade">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>Login to Your Account</h1>
+				<form action="/login" method="POST">
+					<input type="text" name="username" placeholder="Username">
+					<input type="password" name="password" placeholder="Password">
+					<input type="submit" value="Login" class="login loginmodal-submit">
+				</form>
+				<div class="login-help">
+					<a href="#">Register &nbsp;-&nbsp;  </a>
+					<a href="#">Forgot Password</a>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<div class="jumbotron">
+	<div class="jumbotron">
+		<div class="container">
+			<h1><%=i18n.__("title")%></h1>
+			<p><%=i18n.__("description")%></p>
+			<br>
+			<br>
+			<p> <a href="#" role="button" data-target="#login-modal" data-toggle="modal" class="btn btn-lg btn-success">Connectez vous avec votre compte client</a>
+			</p>
+		</div>
+	</div>
 	<div class="container">
-		<h1><%=i18n.__("title")%></h1>
-		<p><%=i18n.__("description")%></p>
-		<br>
-		<br>
-		<p> <a href="#" role="button" data-target="#login-modal" data-toggle="modal" class="btn btn-lg btn-success">Connectez vous avec votre compte client</a>
-		</p>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
+		<div class="row" >
+			<div id="userlist" ng-app="userlist" ng-controller="UsersController" ng-init="fetchAll()">
+				<form class="form-inline">
+				    <div class="input-group">
+			  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+				        <input type="text" ng-model="search" class="form-control" placeholder="<%=i18n.__("search")%>">
+				    </div>
+				</form>		
 
-		<table  class="table table-striped" ng-controller="UsersController" ng-init="fetchAll()">
-			<thead>
-				<tr>
-					<th ng-click="sort('value.name')"><%=i18n.__("name")%><span class="glyphicon sort-icon" ng-show="sortKey=='value.name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-					<th ng-click="sort('value.email')"><%=i18n.__("email")%><span class="glyphicon sort-icon" ng-show="sortKey=='value.email'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-					<th ng-click="sort('value.address')"><%=i18n.__("address")%><span class="glyphicon sort-icon" ng-show="sortKey=='value.address'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-					<th ng-click="sort('value.role')"><%=i18n.__("role")%><span class="glyphicon sort-icon" ng-show="sortKey=='value.role'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="user in users">
-					<td>{{ user.value.name }}</td>
-					<td>{{ user.value.email }}</td>
-					<td>{{ user.value.address }}</td>
-					<td>{{ user.value.role }}</td>
-				</tr>	
-			</tbody>
-		</table>
+				<table  class="table table-striped">
+					<thead>
+						<tr>
+							<th ng-click="sort('value.name')"><%=i18n.__("name")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th ng-click="sort('value.email')"><%=i18n.__("email")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.email'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th ng-click="sort('value.address')"><%=i18n.__("address")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.address'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th ng-click="sort('value.role')"><%=i18n.__("role")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.role'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr dir-paginate="user in users |orderBy:sortKey:reverse|filter:search|itemsPerPage:pageSize ">
+							<td>{{ user.value.name }}</td>
+							<td>{{ user.value.email }}</td>
+							<td>{{ user.value.address }}</td>
+							<td>{{ user.value.role }}</td>
+						</tr>	
+					</tbody>
+				</table>
+				<dir-pagination-controls></dir-pagination-controls>	
+			</div>	
+		</div>
 	</div>
-</div>
 <% include footer.html %>

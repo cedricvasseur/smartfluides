@@ -1,6 +1,6 @@
 <% include header.html %>
 </head>
-<body ng-app="app" >
+<body dir="rtl">
  	<% include menu_rtl.html %>
 <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" class="modal fade">
 	<div class="modal-dialog">
@@ -20,11 +20,11 @@
 </div>
 <div class="jumbotron">
 	<div class="container">
-		<h1 class="pull-right" > <%=i18n.__("title")%></h1>
-		<p class="pull-right" ><%=i18n.__("description")%></p>
+		<h1> <%=i18n.__("title")%></h1>
+		<p><%=i18n.__("description")%></p>
 		<br>
 		<br>
-		<p class="pull-right" > <a href="#" role="button" data-target="#login-modal" data-toggle="modal" class="btn btn-lg btn-success"><%=i18n.__("login_button")%></a>
+		<p> <a href="#" role="button" data-target="#login-modal" data-toggle="modal" class="btn btn-lg btn-success"><%=i18n.__("login_button")%></a>
 		</p>
 	</div>
 </div>
