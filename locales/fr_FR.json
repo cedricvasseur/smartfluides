@@ -3,7 +3,6 @@
 	"about": "A propos",
 	"contact": "Contact",
 	"users": "Utilisateurs",
-	"language": "Langue",
 	"description": "La nouvelle application de restitution des données fluides de Suez Smart Building, Créée pour le client, l'application Smart Fluides permet d'afficher les données multi-fluides plus rapidement, plus sécurisées et ceci sur l'ensemble des périphériques.",
 	"login_button": "Connectez vous avec votre compte client",
 	"fast": "Rapide",
@@ -17,9 +16,12 @@
 	"en_US": "Américain",
 	"jp_JP": "Japonais",
 	"ar_TN": "Tunisien",
-	"ru_RU": "Russe",		
+	"ru_RU": "Russe",
+	"es_ES": "Espagnol",
+	"it_IT": "Italien",
 	"name": "Nom",
 	"email": "Courriel",
 	"address": "Adresse",
-	"role": "Rôle"
+	"role": "Rôle",
+	"search": "Recherche"
 }

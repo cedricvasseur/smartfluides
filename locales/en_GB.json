@@ -2,7 +2,6 @@
 	"home": "Home",
 	"about": "About",
 	"contact": "Contact",
-	"language": "Language",
 	"users": "Users",
 	"description": "The new Multifluid data rendering application from Suez Smart Building, Design for customer, the Smart Fluides application can display the Multifluid data's faster, secure and on all Devices.",
 	"login_button": "Log in to your account",
@@ -17,9 +16,13 @@
 	"en_US": "American",
 	"jp_JP": "Japanese",
 	"ar_TN": "Tunisian",
-	"ru_RU": "Russian",	
+	"ru_RU": "Russian",
+	"es_ES": "Spanish",
+	"it_IT": "Italian",
 	"name": "Name",
 	"email": "Email",
 	"address": "Address",
-	"role": "Role"
+	"role": "Role",
+	"search": "Search",
+	"language": "language"
 }

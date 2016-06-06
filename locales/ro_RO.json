@@ -2,7 +2,6 @@
 	"home": "Acasă",
 	"about": "Despre",
 	"contact": "contact",
-	"language": "Limbă",
 	"users": "Utilizatori",
 	"description": "Noua aplicație de redare Fluid Datelor Suez inteligent Building, creat pentru client, aplicația Fluid inteligent poate afișa date multi-media mai rapid, mai sigur, și acest lucru pe toate dispozitivele.",
 	"login_button": "Conectează-te cu contul tău",
@@ -17,9 +16,12 @@
 	"en_US": "American",
 	"jp_JP": "Japoneză",
 	"ar_TN": "Tunisian",
-	"ru_RU": "Rusă",		
+	"ru_RU": "Rusă",
+	"es_ES": "spaniolă",
+	"it_IT": "Italiană",
 	"name": "Nume",
 	"email": "Poștă electronică",
 	"address": "Adresa",
-	"role": "Rol"
+	"role": "Rol",
+	"search": "Căutare"
 }

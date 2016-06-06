@@ -19,14 +19,22 @@ router.get('/', function(req, res, next) {
 	// Get all languages
 	router.get('/languages', function(req, res, next) {
 	   	var languages = [];
-	   	//console.log(languages);
-		for (var i in i18n.getCatalog()) {
+	    for (var i in i18n.getCatalog()) {
 
 			var lang = { code: i, name: res.__(i),icon:'flag-icon-'+i.substring(3,6).toLowerCase()};
-
- 	 		languages.push(lang);
+			if(i != res.getLocale()){
+				languages.push(lang);	
+			}	
  		}	
-	    res.send(languages);
+
+ 		var byName = languages.slice(0);
+		byName.sort(function(a,b) {
+		    var x = a.name.toLowerCase();
+		    var y = b.name.toLowerCase();
+		    return x < y ? -1 : x > y ? 1 : 0;
+		});
+				
+	    res.send(byName);
 	});	
 
 
