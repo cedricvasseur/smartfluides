@@ -1,0 +1,21 @@
+<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" class="modal fade">
+	<div class="modal-dialog">
+		<div class="loginmodal-container">
+			<h1><%=i18n.__("login_button")%></h1>
+			<form action="/login" method="POST">
+				<input type="text" name="username" placeholder="<%=i18n.__("username")%>">
+				<input type="password" name="password" placeholder="<%=i18n.__("password")%>">
+				<input type="submit" value="<%=i18n.__("login")%>" class="login loginmodal-submit">
+			</form>
+		</div>
+	</div>
+</div>
+<div class="jumbotron">
+	<div class="container">
+		<h1> <%=i18n.__("title")%></h1>
+		<p><%=i18n.__("description")%></p>
+		<br>
+		<br>
+		<p> <a href="#" role="button" data-target="#login-modal" data-toggle="modal" class="btn btn-lg btn-success"><%=i18n.__("login_button")%></a></p>
+	</div>
+</div>

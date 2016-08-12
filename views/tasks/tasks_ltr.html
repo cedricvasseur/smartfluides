@@ -1,0 +1,47 @@
+<% include ../header.html %>
+	<script src="/angular-utils-pagination/dirPagination.js"></script>	
+	<script src="/javascripts/tasks.js"></script>
+</head>
+<body>
+ 	<% include ../menu/auth_menu_ltr.html %>
+	<div class="container container-top">
+		<div class="row">
+			<div id="taskPage" ng-app="taskPage" ng-controller="TasksController" ng-init="fetchAll()">
+				<form class="form-inline">
+				    <div class="input-group">
+			  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+				        <input type="text" ng-model="search" class="form-control" placeholder="<%=i18n.__("search")%>">
+				    </div>
+				</form>		
+
+				<table  class="table table-striped">
+					<thead>
+						<tr>
+							<th ng-click="sort('value.priority')"><%=i18n.__("priority")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.priority'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th ng-click="sort('value.category')"><%=i18n.__("category")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.category'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th class="hidden-xs hidden-sm" ng-click="sort('value.description')"><%=i18n.__("task")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.description'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th class="hidden-xs hidden-sm hidden-md" ng-click="sort('value.done')"><%=i18n.__("done")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.done'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>					
+					<tbody>
+						<tr dir-paginate-start="task in tasks |orderBy:sortKey:reverse|filter:search|itemsPerPage:pageSize">
+							<td>{{ task.value.priority }}</td>
+							<td>{{ task.value.category }}</td>
+							<td class="hidden-xs hidden-sm">{{ task.value.description }}</td>
+							<td class="hidden-xs hidden-sm hidden-md">
+								<div class="progress"><div ng-class="getClass(task.value.done)" role="progressbar" aria-valuenow="{{ task.value.done }}"aria-valuemin="0" aria-valuemax="100" style="width:{{ task.value.done }}%"></div>&nbsp;{{ task.value.done }}%</div>
+							</td>
+							<td><a href="#" ng-click="delete(task.id)" class="glyphicon glyphicon-remove"></a></td>
+						</tr>
+						<tr dir-paginate-end></tr>	
+					</tbody>
+				</table>
+				<dir-pagination-controls  boundary-links="true" template-url="/pagination"></dir-pagination-controls>	
+			</div>	
+		</div>						
+	</div>
+
+<% include ../footer.html %>
+
+

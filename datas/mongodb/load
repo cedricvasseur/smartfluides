@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#############################################################
+#    Script de chargment du jeux de données smartfluides    #
+#    Cédric VASSEUR                                         #
+#    Mai 2016                                               #
+#############################################################
+
+
+database=smartfluides
+collection=counterreadings
+
+
+# Récupération du répertoire courant
+filepath=`echo "$0" | sed -e "s/[^\/]*$//"`
+cd "$filepath"
+
+mongoimport -d $database -c $collection --type csv --file releves.csv --headerline

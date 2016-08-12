@@ -1,0 +1,23 @@
+#!/bin/bash
+clear
+#############################################################
+#    Script de lancement de l'application avec Passenger    #
+#    Cédric VASSEUR                                         #
+#    Mai 2016                                               #
+#############################################################
+#
+# Pour le port 80 ou 443, il faut donner le droit d'execution 
+# en positionnant le sticky bit  
+# sudo chmod +s myscript
+#
+export PATH=$PATH:/usr/local/bin/
+port=8080
+instances=2
+
+# Récupération du répertoire courant
+filepath=`echo "$0" | sed -e "s/[^\/]*$//"`
+cd "$filepath"
+
+# Lancement de la commande
+
+passenger start --port $port --min-instances $instances --log-file ./logs/passenger.$port.log --pid-file ./logs/passenger.$port.pid

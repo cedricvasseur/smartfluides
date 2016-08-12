@@ -1,15 +1,21 @@
+/************************************************************************/
+/*  users.js                                                            */
+/*  VASSEUR cedric @2016                                                */
+/*  User Route File for Template                                        */
+/************************************************************************/
+
 var express = require('express');
 var router = express.Router();
 var UserModel = require("../models/usermodel");
 
+var isAuthenticated = require('../auth/isAuthenticated');
 
+var page = 'users';
 
-router.get('/', function(req, res, next) {
-  res.render('users_ltr.html',{i18n: res});
-});
-
-router.get('/:id_user', function(req, res, next) {
-  res.render('user_ltr.html',{i18n: res,id_user:req.params.id_user});
+router.get('/',isAuthenticated, function(req, res, next) {
+	res.cookie('routes', '/'+page);
+	var user  = req.session.passport.user.value;
+	res.render(page+'/'+page+'_'+req.cookies.l10n+'.html',{i18n: res,user: user});
 });
 
 module.exports = router;
