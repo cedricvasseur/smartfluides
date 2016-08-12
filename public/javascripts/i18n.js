@@ -1,3 +1,10 @@
+/************************************************************************/
+/*  i18n.js                                                             */
+/*  VASSEUR cedric @2016                                                */
+/*  Internationnalisation (i18n) Module for Angular                     */
+/*  Included into header.html view template                             */
+/************************************************************************/
+
 var i18n = angular.module('i18n',[]);
 
 angular.bootstrap(document.getElementById("navbar"), ['i18n']);

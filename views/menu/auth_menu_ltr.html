@@ -1,0 +1,106 @@
+		<div id="login-modal" tabindex="10" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" class="modal fade">
+	
+			<div class="modal-dialog">
+				 <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        <h4 class="modal-title"><%=i18n.__("signout")%></h4>
+				      </div>
+				      <div class="modal-body">
+				        <p><%=i18n.__("signout_confirm")%></p>
+				      </div>
+				      <div class="modal-footer">
+				      	<a href="/login/signout"         type="button" class="btn btn-default" ><i class="glyphicon glyphicon-ok" style="color:green;padding-right:10px;"></i><%=i18n.__("yes")%></a>
+        				<a href="#" data-dismiss="modal" type="button" class="btn btn-default" ><i class="glyphicon glyphicon-remove" style="color:red;padding-right:10px;"></i><%=i18n.__("no")%></a>
+				      </div>
+				    </div>
+			</div>
+		</div>
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed">
+				<span class="sr-only"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="/" class="navbar-brand"><%=i18n.__("title")%></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse"  ng-app="i18n" ng-controller="LanguageController" ng-init="fetchAll()">
+		<!--	
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="/users"> <%=i18n.__("users")%></a>
+				</li>
+				<li>
+					<a href="/sites"> <%=i18n.__("sites")%></a>
+				</li>		
+			</ul>
+		-->
+			<ul class="nav navbar-nav navbar-right">								
+
+				<li class="dropdown">
+					<a href="/messages" role="button" class=" navbar-brand dropdown-toggle"><i class="glyphicon glyphicon-envelope icon-large icon-white"></i><span class="badge badge-success"><%=user.message%></span></a>
+				</li>
+
+
+				<li class="dropdown">
+					<a href="/tasks" role="button" class=" navbar-brand dropdown-toggle"><i class="glyphicon glyphicon-tasks icon-large icon-white"></i><span class="badge badge-warning"><%=user.task%></span></a>
+				</li>
+
+
+				<li class="dropdown">
+					<a href="/notifications" role="button" class=" navbar-brand dropdown-toggle"><i class="glyphicon glyphicon-bell icon-large icon-white"></i><span class="badge badge-danger"><%=user.notification%></span></a>
+				</li>
+
+				<li class="dropdown">
+					<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle">
+						<i class="flag-icon  <%='flag-icon-'+i18n.getLocale().substring(3,6).toLowerCase()  %> "></i>
+						<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= i18n.__(i18n.getLocale())%>--></a>
+					<ul aria-labelledby="dropdownMenu4" class="dropdown-menu" >
+						<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle"></a>
+						<li ng-repeat="lang in languages">
+							<a href="/nls/{{lang.code}}">
+								<i class="flag-icon {{lang.icon}}"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ lang.name }}</span></i>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+ 				<li class="dropdown">
+					<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle">
+						<img ng-src="<%=user.thumbnail%>" class="img-circle" width="20px"height="20px" style="margin-right:10px;"><%=user.name%></a>
+						<ul aria-labelledby="dropdownMenu4" class="dropdown-menu no-padding" style="padding:0 0 0 0;">
+							<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle"></a>
+							<div class="box box-widget widget-user">
+				            	<!-- Add the bg color to the header using any of the bg-* classes -->
+				            	<div class="widget-user-header">
+				              		<div class="widget-user-image">
+				                		<img class="img-circle" src="<%=user.thumbnail%>" class="img-circle" width="128px"height="128px" alt="User Avatar">
+				              		</div>
+				              		<!-- /.widget-user-image -->
+				              		<h3 class="widget-user-username"><%=user.name%></h3>
+				              		<h5 class="widget-user-desc"><%=user.description%></h5>
+				            	</div>
+				            	<div class="box-footer" style="padding:0 0 0 0;">
+									<table class="table">
+										<tr><td><span class="glyphicon glyphicon-map-marker"></span></td><td><%=user.address%></td></tr>
+										<tr><td><span class="glyphicon glyphicon-user"     ></span></td><td><%=user.role%>	</td></tr>
+										<tr><td><span class="glyphicon glyphicon-phone"    ></span></td><td><%=user.mobile%></td></tr>
+										<tr><td><span class="glyphicon glyphicon-earphone" ></span></td><td><%=user.phone%>	</td></tr>
+										<tr><td><span class="glyphicon glyphicon-envelope" ></span></td><td><%=user.email%>	</td></tr>
+									</table>
+				            	</div>
+				          </div>
+					</ul>
+				</li>		
+				<li>
+					<a href="#" role="button" data-target="#login-modal" data-toggle="modal" class="navbar-brand dropdown-toggle"><i class="glyphicon glyphicon-off" style="color:red;"></i></a>
+
+				</li>
+
+			</ul>
+		</div>
+	</div>	
+</nav>

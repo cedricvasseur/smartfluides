@@ -1,0 +1,107 @@
+<% include ../header.html %>
+</head>
+<body dir="rtl">
+ 	<% include ../menu/auth_menu_rtl.html %>
+		<div class="container container-top" id="homeApp" ng-app="homeApp">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="box box-danger">
+						    <div class="box-header with-border"><%= i18n.__("sites")%></div>
+						    <div class="box-body">
+						    	<div id="sitelist" ng-controller="SitesController" ng-init="fetchAll()">
+								<table  class="table table-striped">
+									<thead>
+										<tr>
+											<th>&nbsp;</th>
+											<th ng-click="sort('value.name')"><%=i18n.__("name")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+											<th class="hidden-xs hidden-sm" ng-click="sort('value.type')"><%=i18n.__("type")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.type'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="site in sites |orderBy:sortKey:reverse">
+											<td><img ng-src="{{site.value.thumbnail}}" class="img-circle"></td>
+											<td>{{ site.value.name }}</td>
+											<td class="hidden-xs hidden-sm">{{ site.value.type }}</td>
+										</tr>	
+				 						</tbody>
+								</table>
+								</div>
+						    </div>
+							<div class="box-bottom with-border"><a href="sites"><%= i18n.__("showmore")%></a></div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="box box-primary">
+							<div class="box-header with-border"><%= i18n.__("tasks")%></div>
+						    <div class="box-body">
+						    	<div id="formController" ng-controller="ExampleFormController"> 
+								  <form novalidate class="simple-form">
+								  	<ul class="list-group">
+									    <li class="list-group-item"><%= i18n.__("category")%>: <input type="text" ng-model="task.category" /></li>
+									    <li class="list-group-item"><%= i18n.__("priority")%>: 
+									    		<input type="radio" ng-model="task.priority" value="low" />&nbsp;<%= i18n.__("low")%>	
+									    		<input type="radio" ng-model="task.priority" value="medium" />&nbsp;<%= i18n.__("medium")%> 
+									    		<input type="radio" ng-model="task.priority" value="high" />&nbsp;<%= i18n.__("high")%></li>
+									    <li class="list-group-item"><%= i18n.__("task")%>	 : <input type="text" ng-model="task.description" /></li>
+									    <li class="list-group-item"><input type="hidden" ng-model="task.done" value="0"/></li>
+									    <li class="list-group-item"><input type="submit" ng-click="create(task)" class="btn btn-default" value="<%= i18n.__("save")%>"/></li>
+									    <li class="list-group-item" ng-bind-html="message"></li>
+									</ul>
+								    
+								  </form>
+								 
+								</div>
+									
+						    </div>
+
+						</div>	
+					</div>	
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="box box-success">
+						    <div class="box-header with-border"><%= i18n.__("panel_title")%></div>
+						    <div class="box-body">
+								<div ng-controller="myCtrlHC">
+									<div id="container"></div>
+								</div>
+						    </div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="box">
+							<div class="box-header with-border"><%= i18n.__("panel_title")%></div>
+						    <div class="box-body">					
+						    	<div ng-controller="myCtrlHC2">
+									<div id="container2"></div>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="box box-warning">
+							<div class="box-header with-border"><%= i18n.__("users")%></div>
+						    <div class="box-body" id="sitelist" ng-controller="UsersController" ng-init="fetchAll()">
+								<ul class="users-list">
+									<li  ng-repeat="user in users"><img ng-src="{{user.value.thumbnail}}" class="img-circle" width="64px"height="64px" alt="User Avatar"><br><span class="users-list-name">{{ user.value.name }}</span></li>
+								</ul>	
+							</div>	
+						    <div class="box-bottom with-border"><a href="users"><%= i18n.__("showmore")%></a></div>     
+						</div>
+					</div>		
+				</div>	
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="box box-info">
+						    <div class="box-header with-border"><%= i18n.__("panel_title")%></div>
+						    <div class="box-body">
+						    	<div ng-controller="myCtrlHC3">
+									<div id="container3"></div>
+								</div>
+						    </div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<script src="/javascripts/home.js"></script>	
+<% include ../footer.html %>

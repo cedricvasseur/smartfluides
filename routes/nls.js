@@ -1,7 +1,15 @@
-var express = require('express');
-var config  = require('../config/config.js');
-var router  = express.Router();
+/************************************************************************/
+/*  nls.js                                                              */
+/*  VASSEUR cedric @2016                                                */
+/*  NLS Route File                                                      */
+/************************************************************************/
 
+var express = require('express');
+var L10n    = require('L10n');
+var config  = require('../config/config.js');
+
+var router  = express.Router();
+    
 //
 // Gestion des langues.
 // On récupère la langue passé en paramètre, on vérifie qu'elle est disponible
@@ -10,12 +18,19 @@ var router  = express.Router();
 // 
 
 router.get('/:id', function(req, res, next) {
-  var locale = 'en_GB';
+  var locale = new L10n();
+  var current_locale = 'en_GB';
+
   if(res.getCatalog().hasOwnProperty(req.params.id) != -1 ){
-    locale = req.params.id;
+    current_locale = req.params.id;
   }
-  res.cookie(config.i18n.cookie, locale); 
-  res.redirect('/');
+
+  var direction = locale.info(current_locale.toLowerCase()).direction;
+
+  res.cookie(config.i18n.cookie, current_locale); 
+  res.cookie(config.l10n.cookie, direction); 
+
+  res.redirect(req.cookies.routes);
 });
 
 module.exports = router;

@@ -10,10 +10,6 @@
     background-color: #0090FF;
 }
 
-.col-lg-4 {
-    margin-bottom: 20px;
-    text-align: center;
-}
 
 /****** LOGIN MODAL ******/
 .loginmodal-container {
@@ -116,4 +112,201 @@
 .pagination>li>a, .pagination>li>span {
     color: #0090FF;
 }
+
+/****** PHOTOS POTRAIT ******/
+
+.photo-thumbnail{
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 8px;
+    line-height: 1.42857143;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;    
+}
+
+.photo{
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+/*css to add back colours for badges and make use of the colours*/
+.badge-default {
+  background-color: #999999;
+}
+
+.badge-primary {
+  background-color: #428bca;
+}
+
+.badge-success {
+  background-color: #5cb85c;
+}
+
+.badge-info {
+  background-color: #5bc0de;
+}
+
+.badge-warning {
+  background-color: #f0ad4e;
+}
+
+.badge-danger {
+  background-color: #d9534f;
+}
+
+/*  Profil .... */
+.box-widget {
+  border: none;
+  position: relative;
+}
+
+.widget-user .widget-user-header {
+  padding: 10px;
+  background-color: #337ab7;
+  color: #FFFFFF;
+}
+.widget-user .widget-user-username {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+.widget-user .widget-user-desc {
+  margin-top: 0;
+  white-space: nowrap;
+}
+.widget-user .widget-user-username,
+.widget-user .widget-user-desc {
+  margin-left: 75px;
+}
+.widget-user .widget-user-image > img {
+  width: 65px;
+  height: auto;
+  float: left;
+}
+
+
+.container-top{
+    min-height: 100%;
+    background-color: #f9f9f9;
+    z-index: 800;
+    padding-top:60px;
+}
+.container-bottom{
+    min-height: 100%;
+    background-color: #f9f9f9;
+    z-index: 800;
+}
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+
+.box-primary {
+    border-top-color: #3c8dbc;
+}
+.box-info {
+    border-top-color: #00c0ef;
+}
+.box-success {
+    border-top-color: #00a65a;
+}
+.box-warning {
+    border-top-color: #f39c12;
+}
+.box-danger {
+    border-top-color: #dd4b39;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+.box-header.with-border {
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.footer .with-border {
+    border-top: 1px solid #dd4b39;
+}
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+    min-height: 200px ;
+}
+
+.box-bottom {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.box-bottom a{
+  text-decoration:none;
+}
+
+.box-bottom.with-border {
+    border-top: 1px solid #f4f4f4;
+}
+
+
+.users-list {
+  position:relative;
+    list-style: none;
+    margin: 10;
+    padding: 0;
+    min-height: 200px ;
+}
+
+.users-list>li {
+    width: 33%;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    min-height: 100px ;
+}
+
+.users-list-name {
+    text-decoration: none;
+    color: #666;
+    font-weight: 400;
+    font-size: 11px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
 

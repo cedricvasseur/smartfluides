@@ -23,5 +23,22 @@
 	"email": "Poștă electronică",
 	"address": "Adresa",
 	"role": "Rol",
-	"search": "Căutare"
+	"search": "Căutare",
+	"phone": "Telefon",
+	"mobile": "Mobil",
+	"sites": "Site-uri",
+	"type": "Tip",
+	"organization": "Organizare",
+	"username": "Autentificare",
+	"password": "Parolă",
+	"login": "Login",
+	"lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"signout": "Deconectare",
+	"signout_confirm": "Sunteți sigur că doriți să vă deconectați ?",
+	"yes": "Da",
+	"no": "Nu",
+	"priority": "Prioritate",
+	"category": "Categorie",
+	"task": "Sarcină",
+	"done":"Avansare"
 }
