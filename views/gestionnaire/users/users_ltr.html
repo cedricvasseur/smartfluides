@@ -1,0 +1,70 @@
+<% include ../header.html %>
+	<script src="/angular-utils-pagination/dirPagination.js"></script>
+	<script src="/javascripts/users.js"></script>	
+</head>
+<body>
+ 	<% include ../menu/auth_menu_ltr.html %>
+	<div class="container container-top">
+		<div class="row">
+			<div id="userlist" ng-app="userlist" ng-controller="UsersController" ng-init="fetchAll()">
+				<form class="form-inline">
+				    <div class="input-group">
+			  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+				        <input type="text" ng-model="search" class="form-control" placeholder="<%=i18n.__("search")%>">
+				    </div>
+				</form>		
+
+				<table  class="table table-striped">
+					<thead>
+						<tr>
+							<th>&nbsp;</th>
+							<th ng-click="sort('value.name')"><%=i18n.__("name")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th class="hidden-xs hidden-sm" ng-click="sort('value.email')"><%=i18n.__("email")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.email'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th class="hidden-xs hidden-sm hidden-md" ng-click="sort('value.address')"><%=i18n.__("address")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.address'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th ng-click="sort('value.role')"><%=i18n.__("role")%>&nbsp;<span class="glyphicon sort-icon" ng-show="sortKey=='value.role'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr dir-paginate-start="user in users |orderBy:sortKey:reverse|filter:search|itemsPerPage:pageSize ">
+							<td><img ng-src="{{user.value.thumbnail}}" class="img-circle"></td>
+							<td>{{ user.value.name }}</td>
+							<td class="hidden-xs hidden-sm">{{ user.value.email }}</td>
+							<td class="hidden-xs hidden-sm hidden-md">{{ user.value.address }}</td>
+							<td>{{ user.value.role }}</td>
+							<td>
+							    <button ng-if="user.expanded" ng-click="user.expanded = false" class="btn btn-defaut btn-xs glyphicon glyphicon-triangle-top"></button>
+              					<button ng-if="!user.expanded" ng-click="fetchImage(user.value.photo);user.expanded = true;" class="btn btn-defaut btn-xs glyphicon glyphicon-triangle-bottom"></button>
+              				</td>
+						</tr>	
+ 						<tr ng-if="user.expanded" dir-paginate-end>
+            				<td colspan="6">
+									<div class="row">
+										<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 well">
+											<div class="col-lg-8 col-md-7 col-sm-8 col-xs-12">
+										    	<dl>
+										    		<dt><strong><%=i18n.__("name")%> :		</strong></dt><dd>{{ user.value.name    }}</dd>
+										    		<dt><strong><%=i18n.__("email")%> :		</strong></dt><dd>{{ user.value.email   }}</dd>
+										    		<dt><strong><%=i18n.__("address")%> :	</strong></dt><dd>{{ user.value.address }}</dd>
+										    		<dt><strong><%=i18n.__("role")%> :		</strong></dt><dd>{{ user.value.role    }}</dd>
+										    		<dt><strong><%=i18n.__("phone")%> :		</strong></dt><dd>{{ user.value.phone   }}</dd>					
+										    		<dt><strong><%=i18n.__("mobile")%> :	</strong></dt><dd>{{ user.value.mobile  }}</dd>									    		
+										    	</ul>
+							    			</div>
+							    			<div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+							    				<div class="photo-thumbnail">
+													<img  class="photo" id="{{user.value.photo}}" alt="198x255" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzIwMHgyMDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTUzMDQ5M2NhMyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTMwNDkzY2EzIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9Ijc0LjA1NDY4NzUiIHk9IjEwNC41Ij4yMDB4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+" style="width: 198px; height: 255px;" >
+												</div>
+							    			</div>
+						    			</div>
+						    		</div>
+								</div>
+            				</td>
+         				</tr>
+					</tbody>
+				</table>
+				<dir-pagination-controls  boundary-links="true" template-url="/<%=portail%>/pagination"></dir-pagination-controls>	
+			</div>	
+		</div>						
+	</div>
+<% include ../footer.html %>

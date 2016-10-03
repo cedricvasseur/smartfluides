@@ -41,5 +41,19 @@
 	"category": "فئة",
 	"task": "مهمة",
 	"done": "تقدم",
-	"panel_title": "panel_title"
+	"panel_title": "panel_title",
+	"resident": "resident",
+	"showmore": "showmore",
+	"tasks": "tasks",
+	"low": "low",
+	"medium": "medium",
+	"high": "high",
+	"save": "save",
+	"user": "user",
+	"file": "file",
+	"credit-card": "credit-card",
+	"stats": "stats",
+	"scale": "scale",
+	"calendar": "calendar",
+	"gestionnaire": "gestionnaire"
 }

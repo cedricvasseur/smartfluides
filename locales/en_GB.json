@@ -46,5 +46,15 @@
 	"low": "low",
 	"medium": "medium",
 	"high": "high",
-	"save": "save"
+	"save": "save",
+	"tasks": "tasks",
+	"user": "user",
+	"file": "file",
+	"credit-card": "credit-card",
+	"stats": "stats",
+	"scale": "scale",
+	"calendar": "calendar",
+	"gestionnaire": "gestionnaire",
+	"resident": "resident",
+	"fr_BE": "fr_BE"
 }

@@ -12,11 +12,11 @@ export PATH=$PATH:/usr/local/couchbase/Couchbase\ Server.app/Contents/Resources/
 # Information de connexion au serveur couchbase
 serveur=127.0.0.1
 #serveur=10.17.222.48
+#serveur=saturne.ocea-smart-building.fr
 port=8091
 bucket=smartfluides
 user=Administrator
-password=couchbase
-#password=administrator1
+password=Administrator
 logfile=load.log
 
 # Récupération du répertoire courant
@@ -95,12 +95,12 @@ echo "Génération des fichiers zip ....... OK" >> $logfile
 for fichier in `ls *.zip`
 do
 	echo "Chargement du fichier $fichier ....... OK" >> $logfile
-	cbdocloader -n $serveur:$port -u $user -p $password -b $bucket $fichier >> $logfile
+	docker run  -v /tmp:/tmp --rm couchbase cbdocloader -n $serveur:$port -u $user -p $password -b $bucket $fichier >> $logfile
 done
 echo "Chargement des fichiers zip ....... OK" >> $logfile
 
 #Suppression des fichiers zip
-rm *.zip >> $logfile
+#rm *.zip >> $logfile
 
 osascript -e 'tell application "Terminal" to close (every window whose name contains "load")' &
 exit

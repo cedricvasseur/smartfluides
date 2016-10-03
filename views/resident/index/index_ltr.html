@@ -1,0 +1,25 @@
+<% include ../header.html %>
+</head>
+<body>
+ 	<% include ../menu/menu_ltr.html %>
+ 	<% include ../jumbotron.html %>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<img src="/images/fast.png" alt="Generic placeholder image" width="140" height="140" class="img-circle">
+			<h2> <%=i18n.__("fast")%></h2>
+			<p><%=i18n.__("lorem")%></p>
+		</div>
+		<div class="col-lg-4">
+			<img src="/images/secure.png" alt="Generic placeholder image" width="140" height="140" class="img-circle">
+			<h2><%=i18n.__("secure")%></h2>
+			<p><%=i18n.__("lorem")%></p>
+		</div>
+		<div class="col-lg-4">
+			<img src="/images/multidevices.png" alt="Generic placeholder image" width="140" height="140" class="img-circle">
+			<h2><%= i18n.__("multidevice")%></h2>
+			<p><%=i18n.__("lorem")%></p>
+		</div>
+	</div>
+</div>
+<% include ../footer.html %>

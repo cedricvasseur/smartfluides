@@ -1,0 +1,47 @@
+
+<% include ../header.html %>
+</head>
+<script src="/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="/highcharts/highcharts.js"></script>
+<script type="text/javascript">
+	var title_chart = '<%= i18n.__("panel_title")%>';
+</script>
+<body>
+ 	<% include ../menu/auth_menu_ltr.html %>
+	<section>
+		<div class="container" id="homeApp" ng-app="homeApp">
+			<div class="alert alert-info alert-dismissable fade in">
+				<div class="row">
+			 		<div class="col-sm-6">
+			 			<h4><a href="#demo" data-toggle="collapse" class="nounderline"><img class="img-circle" src="<%=user.thumbnail%>" class="img-circle" alt="User Avatar"> <%=user.name%></a></h4>
+						<ul  id="demo" class="list-group collapse in">
+			 				<li class="list-group-item"><span class="glyphicon glyphicon-map-marker spacer"></span><%-user.address.replace(/,/gi,"$&"+"<br/>")%></br><%=user.country%></li>
+			  			</ul>
+			  		</div>
+					<div class="col-sm-6 hidden-xs">
+						<ul class="list-group">
+							<li class="list-group-item"><span class="glyphicon glyphicon-earphone spacer"  ></span><%=user.phone%></li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-envelope spacer"  ></span><%=user.email%></li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-user spacer"></span><%=user.role%></li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-phone spacer"     ></span><%=user.mobile%></li>
+						<ul/>
+					</div>
+				</div>
+			</div>
+
+			<div class="alert alert-info alert-dismissable fade in">		
+			  	<h4><i class="icon icon-times-circle icon-lg"></i> Oh snap! You got an error!</h4>
+			  	<p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+			</div>
+
+			<div class="alert alert-info alert-dismissable fade in">
+			   	<h4><i class="icon icon-times-circle icon-lg"></i> Oh snap! You got an error!</h4>
+			  	<p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+			</div>
+		</div>		
+
+
+	</section>
+
+
+<% include ../footer.html %>	

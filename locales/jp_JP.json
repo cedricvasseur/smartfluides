@@ -40,5 +40,20 @@
 	"priority": "優先",
 	"category": "カテゴリー",
 	"task": "仕事",
-	"done":"アドバンス"
+	"done": "アドバンス",
+	"panel_title": "panel_title",
+	"user": "user",
+	"file": "file",
+	"credit-card": "credit-card",
+	"stats": "stats",
+	"scale": "scale",
+	"calendar": "calendar",
+	"showmore": "showmore",
+	"tasks": "tasks",
+	"low": "low",
+	"medium": "medium",
+	"high": "high",
+	"save": "save",
+	"gestionnaire": "gestionnaire",
+	"fr_BE": "fr_BE"
 }

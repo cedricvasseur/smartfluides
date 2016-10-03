@@ -48,5 +48,15 @@
 	"medium": "medium",
 	"high": "high",
 	"save": "save",
-	"tasks": "tasks"
+	"tasks": "tasks",
+	"user": "Profil",
+	"file": "Documents",
+	"credit-card": "Factures",
+	"stats": "Consommations",
+	"scale": "Relèves",
+	"calendar": "Demandes",
+	"resident": "Résident",
+	"gestionnaire": "Gestionnaire",
+	"fr_BE": "fr_BE",
+	"pt_PT": "pt_PT"
 }

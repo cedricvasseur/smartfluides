@@ -28,6 +28,7 @@ var debug = require('debug')('Couchbase Session Store')
 var CouchbaseStore = require('connect-couchbase')(session);
 var couchbaseStore = new CouchbaseStore({
     bucket:config.couchbase.bucket,
+    password:config.couchbase.password,
     host:config.couchbase.server,
     connectionTimeout: config.couchbase.connectionTimeout,
     operationTimeout: config.couchbase.operationTimeout,
@@ -46,6 +47,7 @@ couchbaseStore.on('disconnect', function() {
 
 
 // Internationalisation Configuration
+
 i18n.configure(config.i18n);
 var locale = new L10n();
 
@@ -90,9 +92,9 @@ app.get('/', function(req, res, next) {
   var direction = locale.info(res.getLocale().toLowerCase()).direction;
   res.cookie('l10n', direction);
   if(req.isAuthenticated()){
-    res.redirect('/home'); 
+    res.redirect('/gestionnaire/home'); 
   } else {
-    res.redirect('/index');  
+    res.redirect('/gestionnaire/index');  
   }
 });
 var languages = module.exports = i18n.getCatalog();
@@ -111,7 +113,7 @@ fs.readdirSync(apis_path).forEach(function (file) {
 for(var i in apis)
 {
   app.use(i,apis[i]);
-//  console.log("loading Api ", i);  
+ console.log("loading Api ", i);  
 }
 console.log(".......................[ok]");
 
@@ -119,21 +121,35 @@ console.log(".......................[ok]");
 console.log("Loading Routes...");
 var routes = {};
 var routes_path = __dirname + '/routes';
-//
-fs.readdirSync(routes_path).forEach(function (file) {
-    if (file.indexOf('.js') != -1) {
-        routes['/'+file.split('.')[0]] = require(routes_path + '/' + file);
+
+fs.readdirSync(routes_path).forEach(function (fileName) {
+    stats = fs.lstatSync(routes_path + '/' + fileName);
+    if (stats.isDirectory()) {
+      app.get('/'+fileName, function(req, res, next) {
+        if(req.isAuthenticated()){
+          res.redirect('/'+fileName+'/home'); 
+        } else {
+          res.redirect('/'+fileName+'/index');  
+        }
+      });
+      fs.readdirSync(routes_path + '/' + fileName).forEach(function (file) {
+        if (file.indexOf('.js') != -1) {
+          routes['/' + fileName +'/'+file.split('.')[0]] = require(routes_path + '/' + fileName + '/' + file);
+        }
+      });     
     }
 });
 
 for(var i in routes)
 {
   app.use(i,routes[i]);
- //console.log("loading Route ", i);  
+  console.log("loading Route ", i);  
 }
 console.log(".......................[ok]");
 
+
 // catch 404 and forward to error handler
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;

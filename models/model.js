@@ -13,7 +13,7 @@ var config    = require('../config/config'),
 
 var cluster = new couchbase.Cluster(config.couchbase.server);
 
-var bucket = cluster.openBucket(config.couchbase.bucket, function(err) {
+var bucket = cluster.openBucket(config.couchbase.bucket,config.couchbase.password,function(err) {
   if (err) {
     // Failed to make a connection to the Couchbase cluster.
     throw err;
