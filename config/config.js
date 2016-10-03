@@ -32,19 +32,14 @@ config.l10n = {
 }
 
 config.couchbase = {
-        server: "127.0.0.1:8091",
+        server: "localhost:8091",
         bucket: "smartfluides",
+        password: "Administrator",
         connectionTimeout: 2000,
         operationTimeout: 2000,
         cachefile: '',
         ttl: 86400,
         prefix: 'sess'
 }
-
-config.facebook = {
-        client_id: "CLIENT_ID",
-        client_secret: "CLIENT_SECRET",
-        callback_url: "http://localhost:8080/auth/facebook/callback"
-    }
 
 module.exports = config;

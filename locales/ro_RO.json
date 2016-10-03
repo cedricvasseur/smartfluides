@@ -40,5 +40,22 @@
 	"priority": "Prioritate",
 	"category": "Categorie",
 	"task": "Sarcină",
-	"done":"Avansare"
+	"done": "Avansare",
+	"panel_title": "panel_title",
+	"showmore": "showmore",
+	"tasks": "tasks",
+	"low": "low",
+	"medium": "medium",
+	"high": "high",
+	"save": "save",
+	"user": "user",
+	"file": "file",
+	"credit-card": "credit-card",
+	"stats": "stats",
+	"scale": "scale",
+	"calendar": "calendar",
+	"resident": "resident",
+	"gestionnaire": "gestionnaire",
+	"fr_BE": "Belgian",
+	"pt_PT": "pt_PT"
 }

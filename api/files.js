@@ -16,7 +16,7 @@ var isAuthenticated = require('../auth/isAuthenticated');
 
 // Get a File By Id
 router.get('/:file_id', function(req, res, next) {
-    FileModel.getFileById(req.params.file_id,function(error, result) {
+    FileModel.getFileByKey(req.params.file_id,function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }
