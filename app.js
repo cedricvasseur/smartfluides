@@ -14,7 +14,7 @@ var express         = require('express'),
     bodyParser      = require('body-parser'),
     passport        = require('passport'),
     i18n            = require("i18n"),
-    L10n            = require('L10n'),
+    L10n            = require('l10n'),
     fs              = require('fs');
 
 //Loading Configuration file

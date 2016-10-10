@@ -35,8 +35,8 @@ config.couchbase = {
         server: "localhost:8091",
         bucket: "smartfluides",
         password: "Administrator",
-        connectionTimeout: 2000,
-        operationTimeout: 2000,
+        connectionTimeout: 20000,
+        operationTimeout: 20000,
         cachefile: '',
         ttl: 86400,
         prefix: 'sess'

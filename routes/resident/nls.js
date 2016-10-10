@@ -5,7 +5,7 @@
 /************************************************************************/
 
 var express = require('express'),
-	L10n    = require('L10n'),
+	L10n    = require('l10n'),
 	path    = require('path');
 
 var config  = require('../../config/config.js');
